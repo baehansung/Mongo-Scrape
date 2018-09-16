@@ -1,0 +1,27 @@
+{
+  "name": "mongoosecheerios-news-scrape",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baehansung/MongooseCheerios-News-Scrape.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baehansung/MongooseCheerios-News-Scrape/issues"
+  },
+  "homepage": "https://github.com/baehansung/MongooseCheerios-News-Scrape#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.2.15",
+    "request": "^2.88.0"
+  }
+}

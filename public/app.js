@@ -78,14 +78,17 @@ $.getJSON("/articles", function(data) {
   
 
 //    Attempting to scrape articles and reload page with Scrape New Articles button
-$(document).on("click", "#nav-button", function() {
-  function scrape() {
-    window.location.href ="http://localhost:3000/scrape"
-  }
-  function reloadpage() {
-    scrape();
-    window.location.href = "http://localhost:3000/"
-  };
+// $(document).on("click", "#nav-button", function() {
+//   function scrape() {
+//     window.location.href ="http://localhost:3000/scrape"
+//   }
+//   function reloadpage() {
+//     scrape();
+//     window.location.href = "http://localhost:3000/"
+//   };
 
-  reloadpage();
-});
+//   reloadpage();
+// });
+
+
+//and fix saved articles link

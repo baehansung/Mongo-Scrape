@@ -2,47 +2,61 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Scraping With Mongoose</title>
-    <style>
-      body { background-color: #F2F6D0 }
-      #wrapper {
-        width: 960px;
-        margin-left: auto;
-        margin-right: auto;
-        padding-top: 5%;
-      }
-      #articles {
-        display: inline-block;
-        overflow: auto;
-        width: 60%;
-        height: 700px;
-      }
-      #notes {
-        float: right;
-        width: 30%;
-      }
-      textarea, input {
-        display: block;
-        width: 100%;
-        background-color: #FCF5C7;
-      }
-      input {
-        height: 36px;
-        font-size: 24px;
-      }
-      textarea {
-        height: 200px;
-        font-size: 18px;
-      }
-    </style>
+    <title>Coding Project - The Daily Podcasts</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|Cormorant|Prata" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
+
   <body>
-    <div id="wrapper">
-      <h1>Note Scraper</h1>
-      <div id="articles"></div>
-      <div id="notes"></div>
+    <!-- Navbar -->
+    <!-- Should fix this Navbar because when collapsed, it does not show the links -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" id="nav-content">Mongo Scraper</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link active" id="nav-content" href="http://localhost:3000/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-item nav-link" id="nav-content" href="http://localhost:3000/articles">Saved Articles</a>
+          <button type="button" id="nav-button" class="btn btn-light">Scrape New Articles</button>
+          <a href='https://github.com/baehansung'><i class="fab fa-github" id="github"></i></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Title Header -->
+    <div class="row" id="top">
+      <div class="col-sm-12" id="top-header">
+        <img src="img/the-daily.jpg" id="daily-img" alt="The Daily Icon" width="150" height="150">
+        <div id="publisher">by the New York Times</div>
+      </div>
     </div>
+
+    <!-- <div class="row" id="disclaimer-txt">
+      <div class="col-sm-12">
+        <div class="txt">As a disclaimer, I do not own/possess any rights to The Daily, as this webpage is primarily for a class project.
+          However, I chose to append content from the The Daily Podcast because I highly respect The New York Times, and the content that they publish.
+          The Daily, hosted by Michael Barbaro, delves into critical, and sometimes underrepresented news topics. 
+          Though at times this podcast can get very political, many of the other episodes contain real-world, real-life stories that helps listeners understand the perspectives of those affected within the podcast.
+          I highly recommend listening to an episode! Additionally, a more accessible way to listen may be to use the Spotify app and Search "The Daily"
+        </div>
+      </div>
+    </div> -->
+
+    <div class="container" id="news-stories">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="articles"></div>
+          <div id="notes"></div>
+        </div>
+      </div>
+    </div>
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
   </body>
+
 </html>

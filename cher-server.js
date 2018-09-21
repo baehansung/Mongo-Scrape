@@ -9,7 +9,7 @@ console.log("\n******************************************\n" +
             "\n******************************************\n");
 
 // Making a request for "The Daily"
-request("https://www.nytimes.com/podcasts/the-daily", function(error, response, html) {
+request("https://www.nytimes.com/column/the-daily", function(error, response, html) {
 
   // Load the body of the HTML into cheerio
   var $ = cheerio.load(html);
@@ -18,13 +18,13 @@ request("https://www.nytimes.com/podcasts/the-daily", function(error, response, 
   var results = [];
 
   // With cheerio, find each div with the class "story-body" and loop through the results
-  $("article.story").each(function(i, element) {
+  $("article.story.theme-summary").each(function(i, element) {
 
     // Save the text of the span class as "title"
     var title = $(element).find('h2').text();
 
     // Obtaining the link of the article which is the child of div.story-body
-    var link = $(element).find('footer.story-footer').children().attr("data-audio-url");
+    var link = $(element).children().children().attr("href");
 
     // // // //Obtaining the summary of the article
     var summary = $(element).find("p.summary").text();

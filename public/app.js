@@ -1,17 +1,17 @@
-// Grab the articles as a json
+//   // Grab the articles as a json
 $.getJSON("/articles", function(data) {
     // For each one
     for (var i = 0; i < data.length; i++) {
       // Display the apropos information on the page
       $("#articles").append("<p data-id='" + data[i]._id + "'>" 
-        + data[i].date
-        + "<br />" + data[i].title 
-        + "<br />" + data[i].summary 
-        + "<br />" +
-        + "<br />" + data[i].link + "</p>");
+        + "<br />" + "<span class='data-date'>" + data[i].date + "</span>"
+        + "<br />" + "<span class='data-title'>" + data[i].title  + "</span>"
+        + "<br />" + "<span class='data-summary'>" + data[i].summary + "</span>"
+        + "<br />" + '<a href=' + data[i].link +'><i class="fas fa-play-circle"></i></a>' 
+        + "</p>");
     }
   });
-  
+    
   
   // Whenever someone clicks a p tag
   $(document).on("click", "p", function() {
@@ -76,3 +76,16 @@ $.getJSON("/articles", function(data) {
     $("#bodyinput").val("");
   });
   
+
+//    Attempting to scrape articles and reload page with Scrape New Articles button
+$(document).on("click", "#nav-button", function() {
+  function scrape() {
+    window.location.href ="http://localhost:3000/scrape"
+  }
+  function reloadpage() {
+    scrape();
+    window.location.href = "http://localhost:3000/"
+  };
+
+  reloadpage();
+});
